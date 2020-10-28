@@ -1,0 +1,53 @@
+{
+    "properties": [
+    {
+        "title": "Southern Get Away",
+       "address":"12 Tiana Rd, Hampton Bays",
+       "price": 350000,
+       "beds":5,
+       "baths":3,
+       "Description":"Once a rustic fisherman's Village this easy-living bungalow has everything you could want in a Hamptons summer cottage. Including two bedrooms, one bath, and an open area kitchen and living room. This is complimented by a light filled front porch great for taking in the scenic views and tranquil water. 12 East Tiana Drive, Cottage 3 comes with a Har-Tru tennis court, pool and a dock for your boat and has low monthly maintenance fees. Yes, Dock your boat (22' ft max w/ no keel) and ride out the canal into open waters of Tiana and Shinnecock bay where you can moor a larger boat. Great for paddle boards and kayaks as well. This is truly a one of a kind opportunity for a buyer looking for a small cottage by the bay. Monthly fee includes tax and maintenance, as well as a variety of other items. Please ask for a breakdown on this.",
+       "type":"sales",
+       "agent": []
+     },
+     {
+        "title":"Charming Cottage on the River",
+       "address":"12 Queens Anne, Hampton Bays",
+       "price": 750000,
+       "beds":7,
+       "baths":5,
+       "Description":"Situated on +/- 0.73 acre amidst mature vegetable and fruit plantings and ample green lawn, this 3 bedroom/2.5 bathroom contemporary offers a tranquil space for a weekend getaway or year-round living. The open floor plan, with vaulted ceiling and masonry fireplace, provides indoor/outdoor living and entertaining with multiple sliders leading out to the deck and pool. Retreat to the generous master bedroom with sitting area, jacuzzi soaking tub, and separate shower. Situated on the opposite side of the house are two guest bedrooms and a shared bath. All of this is located a short distance to Westhampton Beach's vibrant Main Street, Dune Road's worldclass ocean beaches, and North Fork farms and vineyards.",
+       "type":"sales"
+       ,"agent": []
+    },  {
+        "title":"Spacious East Quogue Contemporary on Sizable Property",
+       "address":"6 The Registry, East Quogue",
+       "price": 1750000,
+       "beds":10,
+       "baths":9,
+       "Description":"Situated on +/- 0.73 acre amidst mature vegetable and fruit plantings and ample green lawn, this 3 bedroom/2.5 bathroom contemporary offers a tranquil space for a weekend getaway or year-round living. The open floor plan, with vaulted ceiling and masonry fireplace, provides indoor/outdoor living and entertaining with multiple sliders leading out to the deck and pool. Retreat to the generous master bedroom with sitting area, jacuzzi soaking tub, and separate shower. Situated on the opposite side of the house are two guest bedrooms and a shared bath. All of this is located a short distance to Westhampton Beach's vibrant Main Street, Dune Road's worldclass ocean beaches, and North Fork farms and vineyards.",
+       "type":"sales",
+       "agent": []
+    },  {
+        "title":"Boho Farmhouse with a Twist",
+       "address":"East Atlanta",
+       "price": 7000,
+       "beds":4,
+       "baths":3,
+       "Description":"Situated on +/- 0.73 acre amidst mature vegetable and fruit plantings and ample green lawn, this 3 bedroom/2.5 bathroom contemporary offers a tranquil space for a weekend getaway or year-round living. The open floor plan, with vaulted ceiling and masonry fireplace, provides indoor/outdoor living and entertaining with multiple sliders leading out to the deck and pool. Retreat to the generous master bedroom with sitting area, jacuzzi soaking tub, and separate shower. Situated on the opposite side of the house are two guest bedrooms and a shared bath. All of this is located a short distance to Westhampton Beach's vibrant Main Street, Dune Road's worldclass ocean beaches, and North Fork farms and vineyards.",
+       "type":"rentals",
+       "agent": []
+    
+    },  {
+        "title":"Bridgehampton North Rental",
+       "address":"160 Meadowlark Ln, Brookhaven",
+       "price": 20000,
+       "beds":7,
+       "baths":8.5,
+       "Description":"Ideally situated just two blocks from the beach and minutes from Bridgehampton town, this rental offers the rare combination of privacy and connectivity. Bright, open and newly furnished interiors make for ultimate comfort and usability. Seven bedrooms and eight baths allow for easy enjoyment of the home. Amenities include a heated gunite pool and spa, patio with outdoor kitchen, and private beach access.",
+       "type":"rentals",
+       "agent": []
+    }
+
+    ]
+}

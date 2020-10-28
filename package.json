@@ -18,9 +18,5 @@
     "nodemon": "^2.0.6",
     "seed": "^0.4.4"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/keyahnajanae/atl-lux-api.git"
-  }
+  "devDependencies": {}
 }

@@ -14,14 +14,14 @@ const indexSale = (req, res) => {
     db.Property.find({type: 'for-sale'}, (err, forSaleProperties) => {
         if (err) console.log('Error in sale property#index:', err);
         if(!forSaleProperties.length) return res.status(200).json({ "message": "No sale properties found in db" });
-        res.status(200).json({ "forSaleProperties": forSaleProperties });
+        res.status(200).json({ "forSale": forSaleProperties });
     });
 };
 const indexRent = (req, res) => {
-    db.Property.find({type: 'for-rent'}, (err, forRentProperties) => {
+    db.Property.find({type: 'for-rent'}, (err, forRent) => {
         if (err) console.log('Error in rental property#index:', err);
-        if(!forRentProperties.length) return res.status(200).json({ "message": "No rental properties found in db" });
-        res.status(200).json({ "forRentProperties": forRentProperties });
+        if(!forRent.length) return res.status(200).json({ "message": "No rental properties found in db" });
+        res.status(200).json({ "forRent": forRent });
     });
 };
 // Index route for for-sale properties

@@ -4,11 +4,28 @@ const index = (req, res) => {
     db.Property.find({}, (err, foundProperties) => {
         if (err) console.log('Error in property#index:', err);
         if(!foundProperties.length) return res.status(200).json({ "message": "No property found in db" });
-        res.status(200).json({ "property": foundProperties });
+        res.status(200).json({ "properties": foundProperties });
     });
 };
 
+//make query to find for sale and for rent 
 
+const indexSale = (req, res) => {
+    db.Property.find({type: 'for-sale'}, (err, forSaleProperties) => {
+        if (err) console.log('Error in sale property#index:', err);
+        if(!forSaleProperties.length) return res.status(200).json({ "message": "No sale properties found in db" });
+        res.status(200).json({ "forSaleProperties": forSaleProperties });
+    });
+};
+const indexRent = (req, res) => {
+    db.Property.find({type: 'for-rent'}, (err, forRentProperties) => {
+        if (err) console.log('Error in rental property#index:', err);
+        if(!forRentProperties.length) return res.status(200).json({ "message": "No rental properties found in db" });
+        res.status(200).json({ "forRentProperties": forRentProperties });
+    });
+};
+// Index route for for-sale properties
+// Index route for for-rent properties
 
 const show = (req, res) => {
     db.Property.findById(req.params.id, (err, foundProperty) => {
@@ -57,6 +74,8 @@ const destroy = (req, res) => {
 
 module.exports = {
     index,
+    indexSale,
+    indexRent,
     show,
     create,
     update,

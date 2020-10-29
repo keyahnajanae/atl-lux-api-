@@ -10,7 +10,7 @@ const PropertySchema = new Schema ({
     beds: {type: Number, required: true},
     baths: {type: Number, required: true},
     description: String,
-    type: {type:String, required:true},
+    type: {type:String, required:[true, "Please enter for-sale or for-rent"]},
     amenities:String,
     photos:String,
     agent: [{ 

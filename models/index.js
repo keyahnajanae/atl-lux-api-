@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const conn = process.env.MONGODB_URI || "mongodb://localhost:27017/properties";
+const conn = process.env.MONGODB_URI || "mongodb://localhost:27017/";
 
 
 const configOptions = {
@@ -17,5 +17,6 @@ mongoose.connect(conn, configOptions). then(()=> console.log('MongoDB successful
 
 module.exports = {
     Property: require('./Property'),
-    Agent: require('./Agent')
+    Agent: require('./Agent'),
+    User: require('./User')
 }

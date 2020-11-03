@@ -13,8 +13,10 @@ app.use(express.json());
 app.use(cors());
 
 // middleware - API routes
-app.use('/api/v1/atl-lux/', routes.properties);
+app.use('/api/v1/atl-lux/properties', routes.properties);
 app.use('/api/v1/atl-lux/agents', routes.agents);
+app.use('/api/v1/atl-lux/auth', routes.auth);
+app.use('/api/v1/atl-lux/user', routes.user);
 
 // connection
 app.listen(port, () => console.log(`Server is running on port ${port}`));

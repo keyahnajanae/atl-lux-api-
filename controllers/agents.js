@@ -44,9 +44,10 @@ const update = (req, res) => {
 const destroy = (req, res) => {
 //   Find property id and delete property id
      db.Agent.findByIdAndDelete(req.params.id, (err, deletedAgent) => {
-        db.Agent.findByIdAndDelete(deletedAgent.agent.property, (err, deletedProperty)=>{
+         console.log(deletedAgent)
+        db.Property.remove({agent:deletedAgent._id}, (err, foundAgentProperty) =>{
             if (err) console.log('Error in agent#destroy:', err);
-
+            console.log(foundAgentProperty)
             if(!deletedAgent) return res.status(200).json({ "message": "Agent no longer exists" });
     
             res.status(200).json({ "agent": deletedAgent});

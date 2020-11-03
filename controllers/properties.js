@@ -1,7 +1,7 @@
 const db = require('../models')
 
 const index = (req, res) => {
-    db.Property.find({}, (err, foundProperties) => {
+    db.Property.find({}).populate("agent").exec((err, foundProperties) => {
         if (err) console.log('Error in property#index:', err);
         if(!foundProperties.length) return res.status(200).json({ "message": "No property found in db" });
         res.status(200).json({ "properties": foundProperties });
@@ -9,6 +9,22 @@ const index = (req, res) => {
 };
 
 //make query to find for sale and for rent 
+// Make a route for when a user clicks on a prop id , that will make an instance of the prop and push it to their own saved prop page
+
+
+const createListing = async (req, res) => {
+
+    await db.Property.create(req.body, (err, createdProperty) => {
+         if (err) console.log('Error in Propertys#create:', err);
+        db.User.findById(createdProperty.user,(err, foundUser) =>{
+             if(err) console.log("Error") 
+             foundUser.property.push(createdProperty)
+             foundUser.save()
+         })
+         
+         res.status(201).json({"property": createdProperty});
+     });
+ };
 
 const indexSale = (req, res) => {
     db.Property.find({type: 'for-sale'}, (err, forSaleProperties) => {
@@ -28,7 +44,7 @@ const indexRent = (req, res) => {
 // Index route for for-rent properties
 
 const show = (req, res) => {
-    db.Property.findById(req.params.id, (err, foundProperty) => {
+    db.Property.findById(req.params.id).populate("agent").exec ((err, foundProperty) => {
         if (err) console.log('Error in propertys#show:', err);
 
         if(!foundProperty) return res.status(200).json({ "message": "No property with that id found in db" });
@@ -37,19 +53,26 @@ const show = (req, res) => {
     });
 };
 
-const create = async (req, res) => {
-    console.log(req.params.id)
-   await db.Property.create(req.body, (err, createdProperty) => {
-        if (err) console.log('Error in Propertys#create:', err);
-       db.Agent.findById(createdProperty.agent,(err, foundAgent) =>{
-            if(err) console.log("Error") 
-            foundAgent.property.push(createdProperty)
-            foundAgent.save()
-        })
+const showRentals = (req, res) => {
+    db.Property.findById(req.params.id).findOne({type: 'for-rent'}, ((err, rentalProperty) => {
+        if (err) console.log('Error in rental propertys#show:', err);
 
-        res.status(201).json({ "property": createdProperty });
-    });
+        if(!rentalProperty) return res.status(200).json({ "message": "No rental property with that id found in db" });
+
+        res.status(200).json({ "rentalProperty": rentalProperty });
+    }));
 };
+
+const showSales = (req, res) => {
+    db.Property.findById(req.params.id).findOne({type: 'for-sale'}, ((err, saleProperty) => {
+        if (err) console.log('Error in sale propertys#show:', err);
+
+        if(!saleProperty) return res.status(200).json({ "message": "No sale property with that id found in db" });
+
+        res.status(200).json({ "saleProperty": saleProperty });
+    }));
+};
+
 
 const update = (req, res) => {
     db.Property.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProperty) => {
@@ -75,9 +98,11 @@ const destroy = (req, res) => {
 module.exports = {
     index,
     indexSale,
+    createListing,
     indexRent,
+    showRentals,
+    showSales,
     show,
-    create,
     update,
     destroy,
 };

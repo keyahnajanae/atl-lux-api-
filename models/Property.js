@@ -11,12 +11,11 @@ const PropertySchema = new Schema ({
     baths: {type: Number, required: true},
     description: String,
     type: {type:String, required:[true, "Please enter for-sale or for-rent"]},
-    amenities:String,
     photos:String,
-    agent: [{ 
+    user: { 
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Agent",
-    }]
+        ref: "User",
+    }
 })
 
 const Property = mongoose.model('Property', PropertySchema)

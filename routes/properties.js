@@ -4,12 +4,14 @@ const ctrl = require('../controllers')
 
 // routes
 router.get('/properties', ctrl.properties.index);
+router.post('/properties', ctrl.properties.createListing);
+router.get('/properties/sales/:id', ctrl.properties.showSales);
+router.get('/properties/rentals/:id', ctrl.properties.showRentals);
 router.get('/for-rent', ctrl.properties.indexRent);
 router.get('/for-sale', ctrl.properties.indexSale);
 router.get('/properties/:id', ctrl.properties.show);
-router.post('/', ctrl.properties.create);
-router.put('/:id', ctrl.properties.update);
-router.delete('/:id', ctrl.properties.destroy);
+router.put('/properties/:id', ctrl.properties.update);
+router.delete('properties/:id', ctrl.properties.destroy);
 
 
 

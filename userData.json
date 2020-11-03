@@ -1,0 +1,20 @@
+{
+    "users":[
+        {
+            "username": "johnbush",
+            "email":"josh@aol.com",
+            "password":"cool",
+            "savedProperty":[]
+        },{
+            "username": "keith sweat",
+            "email":"j123h@aol.com",
+            "password":"coddol",
+            "savedProperty":[]
+        },{
+            "username": "dushhe bush",
+            "email":"abriljosh@aol.com",
+            "password":"c12ool",
+            "savedProperty":[]
+        }
+    ]
+}

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const format = require("format-helper");
-const culture = Culture.set("en-US");
+
 
 const PropertySchema = new Schema ({
     title: { type: String, required: [true, "Please provide a descriptive title for property"] },

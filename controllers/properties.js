@@ -12,12 +12,13 @@ const index = (req, res) => {
 // Make a route for when a user clicks on a prop id , that will make an instance of the prop and push it to their own saved prop page
 
 
-const createListing = async (req, res) => {
+const createListing = (req, res) => {
 
-    await db.Property.create(req.body, (err, createdProperty) => {
+   db.Property.create(req.body, (err, createdProperty) => {
          if (err) console.log('Error in Propertys#create:', err);
-        db.User.findById(createdProperty.user,(err, foundUser) =>{
+        db.User.findById(req.userId,(err, foundUser) =>{
              if(err) console.log("Error") 
+             console.log(foundUser)
              foundUser.property.push(createdProperty)
              foundUser.save()
          })

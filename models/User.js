@@ -18,10 +18,6 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  savedListing: [{ 
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Property",
-}],
 property: [{ 
   type: mongoose.Schema.Types.ObjectId,
   ref: "Property",

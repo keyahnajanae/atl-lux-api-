@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const conn = process.env.MONGODB_URI || "mongodb://localhost:27017/";
+const conn = process.env.MONGODB_URI || "mongodb://localhost:27017/properties";
 
 
 const configOptions = {

@@ -3,30 +3,32 @@
         "name": "Shawn Hooks",
         "agency": "Hedgerow Exclusive Properties",
         "number": "444-222-4564",
-        "property":[]
+        "experience": "4 years"
+        
     },
     {
         "name": "Darryl Keiffer",
         "agency": "Hedgerow Exclusive Properties",
         "number": "631-296-8543",
-        "property":[]
+        "experience": "2 years"
+        
     },
     {
         "name": "Deshawn Lamar",
         "agency": "Nest Seekers International",
         "number": "222-445-3243",
-        "property":[]
+        "experience": "5 years"
     },
     {
         "name": "Daniel Main",
         "agency": "Nest Seekers International",
         "number": "222-554-2345",
-        "property":[]
+        "experience": "4 years"
     },
     {
         "name": "Keisha Stewart",
         "agency": "Hedgerow Exclusive Properties - Bridgehampton",
         "number": "456-303-2224",
-        "property":[]
+        "experience": "4 years"
     }]
 }

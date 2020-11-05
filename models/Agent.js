@@ -6,10 +6,7 @@ const AgentSchema = new Schema ({
     name: String,
     agency: String,
     number: String,
-    property: [{ 
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Property",
-    }]
+    experience: String,
 })
 
 const Agent = mongoose.model('Agent', AgentSchema)

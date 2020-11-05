@@ -15,34 +15,21 @@ const show = async (req, res) => {
 };
 
 
-const indexSaved = (req, res) => {
-    const property = req.params.id
-    db.User.findById(req.params.id, (err, foundUser) => {
-        if (err) return res.status(500).json({status: 500, error:[{message: 'Something went wrong'}],
-      });
-      return 
-        // foundUser.savedListings.push(property);
-        // foundUser.save();
+
+const update = (req, res) => {
+    db.User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedUser) => {
+        if (err) console.log('Error in User update:', err);
+
+        if(!updatedUser) return res.status(200).json({ "message": "No user with that id found in db" });
+
+        res.status(200).json({ "user": updatedUser });
     });
 };
-// const update = (req, res) => {
-//     db.Property.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProperty) => {
-//         if (err) console.log('Error in Propertys#update:', err);
-
-//         if(!updatedProperty) return res.status(200).json({ "message": "No property with that id found in db" });
-
-//         res.status(200).json({ "property": updatedProperty });
-//     });
-// };
-const savedListings = (req, res) => {
-    
-
-    };
 
 module.exports ={
-    indexSaved,
     show,
-    savedListings,
+    update
+    
     
 }
 

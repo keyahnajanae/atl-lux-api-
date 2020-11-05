@@ -1,11 +1,10 @@
 const router = require('express').Router()
 const ctrl = require('../controllers')
+const authRequired = require("../middleware/authRequired");
 
-router.get('/:id', ctrl.user.show)
-router.put('/:id/saved-listings', ctrl.user.indexSaved)
+router.get("/", authRequired, ctrl.user.show);
+router.put('/:id', ctrl.user.update);
 
-// router.get('/saved-listings', ctrl.user.savedListings)
-// for when the update updates and reroutes
 
 
 // create an edit/update route for users

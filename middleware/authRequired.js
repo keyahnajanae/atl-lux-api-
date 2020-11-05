@@ -1,12 +1,17 @@
-// jwt middle ware for verification
+  
 const jwt = require("jsonwebtoken");
 
-module.exports = async (req, res, next) => {
-  if (req.headers["authorization"]) {
-    const token = req.headers["authorization"].split(" ")[1];
-    const payload = await jwt.verify(token, "beamazing");
-    req.currentUser = payload._id;
-    next();
+module.exports = (req, res, next) => {
+  const bearerHeader = req.headers["authorization"];
+  if (typeof bearerHeader !== "undefined") {
+    const token = bearerHeader.split(" ")[1];
+
+    jwt.verify(token, "beamazing", function (err, payload) {
+      if (err) return res.status(500).json({ message: "Invalid token" });
+
+      req.userId = payload._id; //set user id for routes to use
+      next();
+    });
   } else {
     res.sendStatus(403);
   }

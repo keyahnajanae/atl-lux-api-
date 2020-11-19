@@ -11,9 +11,7 @@ const app = express();
 
 
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
- });
+
 
 
  require("dotenv").config();

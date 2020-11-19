@@ -8,15 +8,24 @@ const routes = require('./routes');
 const port = process.env.PORT || 3001;
 const app = express();
 
+
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
+ });
+
+
+ require("dotenv").config();
 // middleware - JSON parsing
 app.use(express.json());
 app.use(cors());
 
 // middleware - API routes
 app.use('/api/v1/atl-lux/', routes.properties);
-app.use('/api/v1/atl-lux/agent', routes.agents);
+app.use('/api/v1/atl-lux/agents', routes.agents);
 app.use('/api/v1/atl-lux/auth', routes.auth);
 app.use('/api/v1/atl-lux/user', routes.user);
 
 // connection
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(process.env.PORT, () => console.log(`Server is running on port ${port}`));

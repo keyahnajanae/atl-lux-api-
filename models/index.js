@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const session = require("express-session");
+
 
 
 require("dotenv").config();
-const conn = "mongodb+srv://Keyahna:rainbows77@cluster0.6c08h.mongodb.net/properties?retryWrites=true&w=majority"
-// process.env.MONGODB_URI || "mongodb://localhost:27017/properties";
+const conn = process.env.MONGODB_URI || "mongodb://localhost:27017/properties";
 
 
 const configOptions = {

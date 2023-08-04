@@ -22,7 +22,9 @@
     "jsonwebtoken": "^9.0.1",
     "method-override": "^3.0.0",
     "mongo": "^0.1.0",
+    "mongodb": "^5.7.0",
     "mongoose": "^5.13.20",
+    "mongoose-currency": "^0.2.0",
     "nodemon": "^3.0.1",
     "react": "^17.0.2",
     "session": "^0.1.0"
